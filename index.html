@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16タイプのポーカースタイル診断</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="screen active">
+            <h1>16タイプのポーカースタイル診断</h1>
+            <p>12の質問に答えて、あなたのポーカースタイルを診断します。</p>
+            <p>所要時間: 約2分</p>
+            <button id="start" class="btn primary">診断スタート</button>
+        </div>
+
+        <div id="question-screen" class="screen">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">1/12</div>
+            </div>
+            
+            <div class="question-content">
+                <h2 id="question-text">質問文がここに表示されます</h2>
+                <div class="answer-buttons">
+                    <button id="answer-a" class="btn answer-btn">選択肢A</button>
+                    <button id="answer-b" class="btn answer-btn">選択肢B</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <div class="result-content">
+                <h1 id="result-type" class="result-type">INTP</h1>
+                <h2 id="result-label" class="result-label">ロジカル・オブザーバー</h2>
+                <p id="result-description" class="result-description">
+                    論理的思考で状況を精査し、冷静に判断を下すタイプです。
+                </p>
+                <div class="action-buttons">
+                    <button id="retry" class="btn secondary">もう一度診断</button>
+                    <button id="share" class="btn primary">結果をコピー</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
