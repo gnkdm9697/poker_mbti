@@ -188,9 +188,18 @@ class PokerMBTIDiagnosis {
 
     displayQuestion() {
         const question = QUESTIONS[this.currentQuestion];
-        document.getElementById('question-text').textContent = `Q${this.currentQuestion + 1}. ${question.text}`;
-        document.getElementById('answer-a').textContent = question.A;
-        document.getElementById('answer-b').textContent = question.B;
+        if (!question) {
+            this.showResult();
+            return;
+        }
+        
+        const questionText = this.sanitizeText(question.text);
+        const answerA = this.sanitizeText(question.A);
+        const answerB = this.sanitizeText(question.B);
+        
+        document.getElementById('question-text').textContent = `Q${this.currentQuestion + 1}. ${questionText}`;
+        document.getElementById('answer-a').textContent = answerA;
+        document.getElementById('answer-b').textContent = answerB;
         
         this.updateProgress();
     }
@@ -202,7 +211,17 @@ class PokerMBTIDiagnosis {
     }
 
     selectAnswer(answer) {
+        if (answer !== 'A' && answer !== 'B') {
+            console.error('Invalid answer:', answer);
+            return;
+        }
+        
         const question = QUESTIONS[this.currentQuestion];
+        if (!question || !question.map || !question.map[answer]) {
+            console.error('Invalid question or answer mapping');
+            return;
+        }
+        
         this.answers.push({
             axis: question.axis,
             type: question.map[answer]
@@ -238,9 +257,14 @@ class PokerMBTIDiagnosis {
         const mbtiType = this.calculateMBTI();
         const result = RESULT_INFO[mbtiType];
         
-        document.getElementById('result-type').textContent = mbtiType;
-        document.getElementById('result-label').textContent = result.label;
-        document.getElementById('result-description').textContent = result.desc;
+        if (!result) {
+            console.error('Invalid MBTI type:', mbtiType);
+            return;
+        }
+        
+        document.getElementById('result-type').textContent = this.sanitizeText(mbtiType);
+        document.getElementById('result-label').textContent = this.sanitizeText(result.label);
+        document.getElementById('result-description').textContent = this.sanitizeText(result.desc);
         
         this.showScreen('result-screen');
     }
@@ -260,11 +284,40 @@ class PokerMBTIDiagnosis {
         
         try {
             await navigator.clipboard.writeText(resultText);
-            alert('結果をクリップボードにコピーしました！');
+            this.showCopyNotification();
         } catch (err) {
             console.error('コピーに失敗しました:', err);
             alert('コピーに失敗しました。');
         }
+    }
+
+    sanitizeText(text) {
+        if (typeof text !== 'string') return '';
+        return text.replace(/[<>&"']/g, function(match) {
+            const escapeMap = {
+                '<': '&lt;',
+                '>': '&gt;',
+                '&': '&amp;',
+                '"': '&quot;',
+                "'": '&#x27;'
+            };
+            return escapeMap[match];
+        });
+    }
+
+    validateInput(input) {
+        return input && typeof input === 'string' && input.length <= 1000;
+    }
+
+    showCopyNotification() {
+        const notification = document.getElementById('copy-notification');
+        if (!notification) return;
+        
+        notification.classList.add('show');
+        
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 1000);
     }
 }
 

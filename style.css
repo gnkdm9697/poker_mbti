@@ -181,6 +181,39 @@ p {
     align-items: center;
 }
 
+.action-buttons-row {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-buttons-row:last-child a.btn {
+    width: calc(2 * 160px + 15px);
+}
+
+.copy-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #dc3545;
+    color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.copy-notification.show {
+    opacity: 1;
+}
+
 @media (min-width: 480px) {
     .container {
         padding: 40px;
@@ -195,7 +228,7 @@ p {
         flex: 1;
     }
     
-    .action-buttons {
+    .action-buttons-row {
         flex-direction: row;
         justify-content: center;
     }

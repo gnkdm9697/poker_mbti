@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'none'; img-src 'self' data:; font-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="no-referrer">
     <title>16タイプのポーカースタイル診断</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
+        <div id="copy-notification" class="copy-notification">
+            結果をクリップボードにコピーしました！
+        </div>
+        
         <div id="start-screen" class="screen active">
             <h1>16タイプのポーカースタイル診断</h1>
             <p>12の質問に答えて、あなたのポーカースタイルを診断します。</p>
@@ -40,8 +49,13 @@
                     論理的思考で状況を精査し、冷静に判断を下すタイプです。
                 </p>
                 <div class="action-buttons">
-                    <button id="retry" class="btn secondary">もう一度診断</button>
-                    <button id="share" class="btn primary">結果をコピー</button>
+                    <div class="action-buttons-row">
+                        <button id="retry" class="btn secondary">もう一度診断</button>
+                        <button id="share" class="btn primary">結果をコピー</button>
+                    </div>
+                    <div class="action-buttons-row">
+                        <a href="https://sites.google.com/knowthyself.games/nekonosyukai/%E3%83%9B%E3%83%BC%E3%83%A0" target="_blank" rel="noopener noreferrer" class="btn secondary">猫の集会に戻る</a>
+                    </div>
                 </div>
             </div>
         </div>
