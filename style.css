@@ -6,8 +6,8 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #2c6f38;
-    color: #ffffff;
+    background-color: var(--bg-primary);
+    color: var(--text-white);
     line-height: 1.6;
 }
 
@@ -34,26 +34,27 @@ body {
 h1 {
     font-size: 28px;
     margin-bottom: 20px;
-    color: #ffffff;
+    color: var(--text-white);
 }
 
 h2 {
     font-size: 20px;
     margin-bottom: 30px;
-    color: #ffffff;
+    color: var(--text-white);
 }
 
 p {
     margin-bottom: 15px;
-    color: #cccccc;
+    color: var(--text-white);
+    opacity: 0.8;
 }
 
 .btn {
     display: inline-block;
     padding: 15px 30px;
-    border: 2px solid #dc3545;
-    background-color: transparent;
-    color: #dc3545;
+    border: 2px solid var(--button-secondary-border);
+    background-color: var(--button-secondary-bg);
+    color: var(--button-secondary-text);
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
@@ -62,12 +63,14 @@ p {
     transition: all 0.3s ease;
     margin: 10px;
     min-width: 160px;
+    box-shadow: 0 2px 4px var(--shadow-medium);
 }
 
 .btn:hover {
-    background-color: #dc3545;
-    color: #ffffff;
+    background-color: var(--button-secondary-hover-bg);
+    color: var(--button-secondary-hover-text);
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
 }
 
 .btn:focus {
@@ -75,23 +78,28 @@ p {
 }
 
 .btn.primary {
-    background-color: #dc3545;
-    color: #ffffff;
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    border-color: var(--button-primary-border);
+    box-shadow: 0 2px 4px var(--shadow-medium);
 }
 
 .btn.primary:hover {
-    background-color: #c82333;
-    border-color: #c82333;
+    background-color: var(--button-primary-hover-bg);
+    color: var(--button-primary-hover-text);
+    border-color: var(--button-primary-hover-bg);
+    box-shadow: 0 4px 8px var(--shadow-medium);
 }
 
 .btn.secondary {
-    border-color: #6c757d;
-    color: #6c757d;
+    border-color: var(--button-secondary-border);
+    color: var(--button-secondary-text);
+    background-color: var(--button-secondary-bg);
 }
 
 .btn.secondary:hover {
-    background-color: #6c757d;
-    color: #ffffff;
+    background-color: var(--button-secondary-hover-bg);
+    color: var(--button-secondary-hover-text);
 }
 
 .progress-container {
@@ -101,23 +109,25 @@ p {
 .progress-bar {
     width: 100%;
     height: 8px;
-    background-color: #4a4a4a;
+    background-color: var(--progress-bg);
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .progress-fill {
     height: 100%;
-    background-color: #dc3545;
+    background-color: var(--progress-fill);
     border-radius: 4px;
     transition: width 0.3s ease;
     width: 0%;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
 }
 
 .progress-text {
     font-size: 14px;
-    color: #cccccc;
+    color: var(--progress-text);
     font-weight: 600;
 }
 
@@ -151,14 +161,14 @@ p {
 .result-type {
     font-size: 48px;
     font-weight: 800;
-    color: #ffffff;
+    color: var(--text-white);
     margin-bottom: 15px;
     letter-spacing: 4px;
 }
 
 .result-label {
     font-size: 24px;
-    color: #dc3545;
+    color: var(--text-white);
     margin-bottom: 25px;
     font-weight: 600;
 }
@@ -166,12 +176,13 @@ p {
 .result-description {
     font-size: 16px;
     line-height: 1.8;
-    color: #cccccc;
+    color: var(--text-white);
     margin-bottom: 40px;
     padding: 20px;
-    background-color: #3a3a3a;
+    background-color: var(--accent-green-dark);
     border-radius: 8px;
-    border-left: 4px solid #dc3545;
+    border-left: 4px solid var(--primary-green);
+    opacity: 0.9;
 }
 
 .action-buttons {
@@ -197,14 +208,14 @@ p {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #dc3545;
-    color: #ffffff;
+    background-color: var(--primary-green);
+    color: var(--text-white);
     padding: 10px 16px;
     border-radius: 6px;
     font-weight: 500;
     font-size: 12px;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px var(--shadow-dark);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -224,21 +235,22 @@ p {
 .detail-item {
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #1a4c23;
+    background-color: var(--accent-green-dark);
     border-radius: 8px;
-    border-left: 4px solid #dc3545;
+    border-left: 4px solid var(--primary-green);
 }
 
 .detail-title {
     font-size: 16px;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--text-white);
     margin-bottom: 8px;
 }
 
 .detail-content {
     font-size: 14px;
-    color: #cccccc;
+    color: var(--text-white);
+    opacity: 0.8;
     line-height: 1.5;
     margin: 0;
 }

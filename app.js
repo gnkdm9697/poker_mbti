@@ -232,7 +232,6 @@ class PokerMBTIDiagnosis {
         document.getElementById('start').addEventListener('click', () => this.startDiagnosis());
         document.getElementById('answer-a').addEventListener('click', () => this.selectAnswer('A'));
         document.getElementById('answer-b').addEventListener('click', () => this.selectAnswer('B'));
-        document.getElementById('retry').addEventListener('click', () => this.restart());
         document.getElementById('share').addEventListener('click', () => this.shareResult());
         document.getElementById('back-to-types').addEventListener('click', () => this.goBackToTypes());
     }

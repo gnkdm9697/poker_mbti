@@ -1,0 +1,71 @@
+/* Green Theme Color Palette - thema_example.jpgをベースとしたカラーテーマ */
+:root {
+  /* メインカラー - 鮮やかなライムグリーン */
+  --primary-green: #8BC34A;
+  --primary-green-light: #9CCC65;
+  --primary-green-dark: #689F38;
+
+  /* セカンダリカラー - 深いグリーン */
+  --secondary-green: #4CAF50;
+  --secondary-green-light: #66BB6A;
+  --secondary-green-dark: #388E3C;
+
+  /* アクセントカラー - 濃いフォレストグリーン */
+  --accent-green: #2E7D32;
+  --accent-green-light: #43A047;
+  --accent-green-dark: #1B5E20;
+
+  /* 背景色 */
+  --bg-primary: #8BC34A;
+  --bg-secondary: #C8E6C9;
+  --bg-light: #E8F5E8;
+  --bg-white: #FFFFFF;
+
+  /* テキストカラー */
+  --text-white: #FFFFFF;
+  --text-dark: #1B5E20;
+  --text-medium: #2E7D32;
+  --text-light: #4CAF50;
+
+  /* ボタン専用カラー */
+  --button-primary-bg: #FFFFFF;
+  --button-primary-text: #2E7D32;
+  --button-primary-border: #2E7D32;
+  --button-primary-hover-bg: #2E7D32;
+  --button-primary-hover-text: #FFFFFF;
+  
+  --button-secondary-bg: transparent;
+  --button-secondary-text: #FFFFFF;
+  --button-secondary-border: #FFFFFF;
+  --button-secondary-hover-bg: #FFFFFF;
+  --button-secondary-hover-text: #2E7D32;
+
+  /* プログレスバー専用カラー */
+  --progress-bg: rgba(255, 255, 255, 0.2);
+  --progress-fill: #FFFFFF;
+  --progress-text: #FFFFFF;
+
+  /* ボーダー・アウトライン */
+  --border-light: #A5D6A7;
+  --border-medium: #66BB6A;
+  --border-dark: #388E3C;
+
+  /* シャドウ */
+  --shadow-light: rgba(76, 175, 80, 0.1);
+  --shadow-medium: rgba(76, 175, 80, 0.2);
+  --shadow-dark: rgba(46, 125, 50, 0.3);
+
+  /* グラデーション */
+  --gradient-primary: linear-gradient(135deg, #8BC34A 0%, #66BB6A 100%);
+  --gradient-secondary: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  --gradient-light: linear-gradient(135deg, #C8E6C9 0%, #E8F5E8 100%);
+
+  /* ホバー効果 */
+  --hover-primary: #9CCC65;
+  --hover-secondary: #66BB6A;
+  --hover-accent: #43A047;
+
+  /* フォーカス効果 */
+  --focus-ring: rgba(139, 195, 74, 0.5);
+  --focus-border: #8BC34A;
+}
