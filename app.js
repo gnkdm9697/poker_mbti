@@ -389,8 +389,7 @@ class PokerMBTIDiagnosis {
     }
     
     goBackToTypes() {
-        // ページのリロードでスタート画面に戻る
-        window.location.reload();
+        window.open('https://sites.google.com/knowthyself.games/nekonosyukai/16%E3%82%BF%E3%82%A4%E3%83%97%E3%81%AE%E3%83%97%E3%83%AC%E3%82%A4%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB', '_blank');
     }
 }
 
